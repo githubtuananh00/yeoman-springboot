@@ -1,5 +1,5 @@
 {
-	"appName": "myProject-SpringBoot",
+	"appName": "demo-GeneratorSpringboot",
 	"packageName": "com.demo",
 	"databaseType": "mysql",
 	"entityName": "Student",
