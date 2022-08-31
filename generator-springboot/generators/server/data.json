@@ -1,0 +1,15 @@
+{
+	"appName": "myProject-SpringBoot",
+	"packageName": "com.demo",
+	"databaseType": "mysql",
+	"entityName": "Student",
+	"fields": {
+		"id": "Long",
+		"Name": "String",
+		"Age": "int",
+		"Address": "String"
+	},
+	"basePath": "/api/users",
+	"dbMigrationTool": "flywaydb",
+	"buildTool": "maven"
+}

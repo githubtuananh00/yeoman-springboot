@@ -1,0 +1,19 @@
+{
+	"dependencies": {
+		"yeoman-generator": "^5.7.0"
+	},
+	"name": "generator-springboot",
+	"version": "1.0.0",
+	"files": [
+		"generators"
+	],
+	"main": "index.js",
+	"devDependencies": {},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": ""
+}
