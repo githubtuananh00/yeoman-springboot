@@ -18,7 +18,7 @@ module.exports = class extends BaseGenerator {
         return {
             validateEntityName() {
                 const context = this.context;
-                
+
             }
         }
     }
@@ -44,10 +44,12 @@ module.exports = class extends BaseGenerator {
         this.configOptions = Object.assign({}, this.configOptions, this.config.getAll());
         this.configOptions.appName = data.appName;
         this.configOptions.basePath = data.basePath;
-        this.configOptions.entityName = data.entityName;
-        this.configOptions.entityVarName = _.camelCase(data.entityName);
-        this.configOptions.tableName = _.lowerCase(data.entityName) + 's';
-        this.configOptions.fields=data.fields;
+        data.table.map(item => {
+            this.configOptions.entityName = item.entityName;
+            this.configOptions.entityVarName = _.camelCase(item.entityName);
+            this.configOptions.tableName = _.lowerCase(item.entityName) + 's';
+            this.configOptions.fields = item.fields;
+        })
         this.configOptions.packageFolder = data.packageName.replace(/\./g, '/');
         this.configOptions.packageName = data.packageName;
         this.configOptions.databaseType = data.databaseType;
@@ -55,7 +57,7 @@ module.exports = class extends BaseGenerator {
         this.configOptions.buildTool = data.buildTool;
         this.configOptions.supportDatabaseSequences =
             data.databaseType === 'h2'
-        || data.databaseType === 'postgresql';
+            || data.databaseType === 'postgresql';
         Object.assign(this.configOptions, constants);
     }
 
@@ -68,8 +70,9 @@ module.exports = class extends BaseGenerator {
         this._generateDbMigrationConfig(this.configOptions);
         // this._generateDockerComposeFiles(this.configOptions);
         // this._generateLocalstackConfig(this.configOptions);
-        
+
         this._generateAppCode(this.configOptions);
+
     }
 
     end() {
@@ -187,6 +190,7 @@ module.exports = class extends BaseGenerator {
             { src: 'repositories/Repository.java', dest: 'repositories/' + configOptions.entityName + 'Repository.java' },
             { src: 'services/Service.java', dest: 'services/' + configOptions.entityName + 'Service.java' },
             { src: 'web/controllers/Controller.java', dest: 'web/controllers/' + configOptions.entityName + 'Controller.java' },
+
         ];
         // if (configOptions.features.includes("localstack")) {
         //     mainJavaTemplates.push('config/AwsConfig.java');
@@ -226,7 +230,7 @@ module.exports = class extends BaseGenerator {
         this.fs.copyTpl(this.templatePath('app/lombok.config'), this.destinationPath('lombok.config'), configOptions);
         this.fs.copyTpl(this.templatePath('app/sonar-project.properties'), this.destinationPath('sonar-project.properties'), configOptions);
         this.fs.copyTpl(this.templatePath('app/README.md'), this.destinationPath('README.md'), configOptions);
- 
+
     }
     _generateDbMigrationConfig(configOptions) {
         if (configOptions.dbMigrationTool === 'flywaydb') {

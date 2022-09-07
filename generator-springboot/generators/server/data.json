@@ -2,13 +2,25 @@
 	"appName": "demo-GeneratorSpringboot",
 	"packageName": "com.demo",
 	"databaseType": "mysql",
-	"entityName": "Student",
-	"fields": {
-		"id": "Long",
-		"Name": "String",
-		"Age": "int",
-		"Address": "String"
-	},
+	"table": [
+		{
+			"entityName": "Student",
+			"fields": {
+				"id": "Long",
+				"Name": "String",
+				"Age": "int",
+				"Address": "String"
+			}
+		},
+		{
+			"entityName": "User",
+			"fields": {
+				"id": "Long",
+				"username": "String",
+				"password": "String"
+			}
+		}
+	],
 	"basePath": "/api/users",
 	"dbMigrationTool": "flywaydb",
 	"buildTool": "maven"

@@ -10,16 +10,6 @@ module.exports = class extends BaseGenerator {
         super(args, opts);
         this.configOptions = this.options.configOptions || {};
 
-        // this.argument("entityName", {
-        //     type: String,
-        //     required: true,
-        //     description: "Entity name"
-        // });
-
-        // this.option('base-path', {
-        //     type: String,
-        //     desc: "Base URL path for REST Controller"
-        // })
     }
 
     get initializing() {
@@ -27,15 +17,13 @@ module.exports = class extends BaseGenerator {
         return {
             validateEntityName() {
                 const context = this.context;
-                // console.log(`EntityName: ${this.options.entityName}, basePath: ${this.options.basePath}`);
-                //this.env.error("The entity name is invalid");
+
             }
         }
     }
 
 
     get prompting() {
-        // this.log(`EntityName: ${this.options.entityName}, basePath: ${this.options.basePath}`);
         return prompts.prompting;
     }
 
@@ -72,10 +60,10 @@ module.exports = class extends BaseGenerator {
 
     _generateAppCode(configOptions) {
         const mainJavaTemplates = [
-            { src: 'entities/Entity.java', dest:  'entities/' + configOptions.entityName + '.java' },
-            { src:'entities/ResponseObj.java', dest:'entities/ResponseObj.java'},
-            { src:'dto/Request.java', dest:'dto/'+ configOptions.entityName +'Request.java'},
-            { src:'dto/Response.java', dest:'dto/'+ configOptions.entityName +'Response.java'},
+            { src: 'entities/Entity.java', dest: 'entities/' + configOptions.entityName + '.java' },
+            { src: 'entities/ResponseObj.java', dest: 'entities/ResponseObj.java' },
+            { src: 'dto/Request.java', dest: 'dto/' + configOptions.entityName + 'Request.java' },
+            { src: 'dto/Response.java', dest: 'dto/' + configOptions.entityName + 'Response.java' },
             { src: 'repositories/Repository.java', dest: 'repositories/' + configOptions.entityName + 'Repository.java' },
             { src: 'services/Service.java', dest: 'services/' + configOptions.entityName + 'Service.java' },
             { src: 'web/controllers/Controller.java', dest: 'web/controllers/' + configOptions.entityName + 'Controller.java' },

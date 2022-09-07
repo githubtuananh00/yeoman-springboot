@@ -1,0 +1,191 @@
+[{
+    "type": "input",
+    "name": "appName",
+    "message": "Your application name",
+    "default": "myATApp"
+},
+{
+    "type": "checkbox",
+    "name": "angularModules",
+    "message": "What Angular modules would you like to have?",
+    "choices": [{
+        "value": {
+            "key": "animate",
+            "module": "ngAnimate",
+            "package": "angular-animate"
+        },
+        "name": "angular-animate (enable animation features)",
+        "checked": true
+    },
+    {
+        "value": {
+            "key": "angular-local-storage",
+            "module": "LocalStorageModule",
+            "package": "angular-local-storage"
+        },
+        "name": "angular-local-storage (handle local storage and fall back to cookies)",
+        "checked": true
+    },
+    {
+        "value": {
+            "key": "sanitize",
+            "module": "ngSanitize",
+            "package": "angular-sanitize"
+        },
+        "name": "angular-sanitize (to securely parse, translate and manipulate HTML)",
+        "checked": true
+    },
+    {
+        "value": {
+            "key": "messages",
+            "module": "ngMessages",
+            "package": "angular-messages"
+        },
+        "name": "angular-messages (enhanced support for displaying messages (i.e validation) within templates)",
+        "checked": true
+    },
+    {
+        "value": {
+            "key": "aria",
+            "module": "ngAria",
+            "package": "angular-aria"
+        },
+        "name": "angular-aria (support for common ARIA attributes)",
+        "checked": true
+    },
+    {
+        "value": {
+            "key": "material",
+            "module": "ngMaterial",
+            "package": "angular-material"
+        },
+        "name": "angular-material (Angular UI Component framework provides a set of reusable UI components based on Google’s Material Design.)",
+        "checked": true
+    },
+    {
+        "value": {
+            "key": "satellizer",
+            "module": "satellizer",
+            "package": "satellizer"
+        },
+        "name": "angular-satellizer (a simple to use, end-to-end, token-based authentication module for AngularJS with built-in support for social media)",
+        "checked": true
+    }, {
+        "value": {
+            "key": "translate",
+            "module": "pascalprecht.translate",
+            "package": "angular-translate"
+        },
+        "name": "angular-translate (translation in your app made easy)",
+        "checked": true
+    }, {
+        "value": {
+            "key": "angular-resource",
+            "module": "ngResource",
+            "package": "angular-resource"
+        },
+        "name": "angular-resource (the official support for RESTful services)",
+        "checked": false
+    }
+    ],
+    "default": [{
+        "key": "animate",
+        "module": "ngAnimate",
+        "package": "angular-animate"
+    }, {
+        "key": "angular-local-storage",
+        "module": "LocalStorageModule",
+        "package": "angular-local-storage"
+    }, {
+        "key": "sanitize",
+        "module": "ngSanitize",
+        "package": "angular-sanitize"
+    }, {
+        "key": "messages",
+        "module": "ngMessages",
+        "package": "angular-messages"
+    }, {
+        "key": "aria",
+        "module": "ngAria",
+        "package": "angular-aria"
+    }, {
+        "key": "material",
+        "module": "ngMaterial",
+        "package": "angular-material"
+    }, {
+        "key": "satellizer",
+        "module": "satellizer",
+        "package": "satellizer"
+    }, {
+        "key": "translate",
+        "module": "pascalprecht.translate",
+        "package": "angular-translate"
+    }]
+},
+{
+    "type": "confirm",
+    "name": "bootstrapSass",
+    "message": "Would you like to include Bootstrap for Sass?",
+    "default": true
+},
+{
+    "type": "list",
+    "name": "jQuery",
+    "message": "Do you need jQuery?",
+    "choices": [{
+        "value": {
+            "key": "jquery3",
+            "package": "jquery@3"
+        },
+        "name": "jQuery 3.x (new version, lighter, modular, IE9+)"
+    },
+    {
+        "value": {
+            "key": "jquery2",
+            "package": "jquery@2"
+        },
+        "name": "jQuery 2.x (IE9+)"
+    },
+    {
+        "value": {
+            "key": "jquery1",
+            "package": "jquery@1"
+        },
+        "name": "jQuery 1.x (branch still supporting IE6, 7 and 8)"
+    },
+    {
+        "value": {
+            "key": "jqLite"
+        },
+        "name": "None (Angular will use its own jqLite)"
+    }
+    ],
+    "default": {
+        "key": "jqLite"
+    }
+},
+{
+    "type": "confirm",
+    "name": "normalize",
+    "message": "Would you like to include normalize-css - A css library that makes browsers render all elements more consistently and in line with modern standards.",
+    "default": true
+},
+{
+    "type": "confirm",
+    "name": "lodash",
+    "message": "Would you like to include Lodash - A modern JavaScript utility library delivering modularity, performance & extras.",
+    "default": true
+},
+{
+    "type": "confirm",
+    "name": "moment",
+    "message": "Would you like to include Moment.js - Library for parse, validate, manipulate, and display dates in JavaScript.",
+    "default": true
+},
+{
+    "type": "confirm",
+    "name": "ocLazyLoad",
+    "message": "Would you like to include angularOclazyLoad plugin to load angular modules asynchronously.",
+    "default": true
+}
+]
